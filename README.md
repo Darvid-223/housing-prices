@@ -87,6 +87,8 @@ Although your friend has an excellent understanding of property prices in her ow
 
 1. Lot Size and Property Size Correlate with Price: Our first hypothesis is that both property size and lot size have a strong correlation with the sales price. Larger properties and lots are likely to be more valuable due to their potential use and space.
 
+2. Kitchen Quality Correlate with Value: We believe that houses with above-average kitchen quality will have a higher sales price.
+
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
