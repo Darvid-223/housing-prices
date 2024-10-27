@@ -74,20 +74,25 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-## Business Requirements
+## Business Requirement 1: Data Visualization and Correlation
 
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+- Lydia wants to understand the key factors that influence house prices in Ames, Iowa.
+- To achieve this, we will conduct data visualization and a correlation analysis to identify which variables have the strongest impact on the sale price.
+- This requirement involves creating visualizations such as scatter plots, bar charts, and heatmaps that show the relationship between attributes like house size, year built, and lot size, and their correlation with sales price.
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+## Business Requirement 2: Price Prediction Using Machine Learning
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+- Lydia needs a machine learning model to accurately predict the sales prices of her inherited properties.
+- We will use a regression model to estimate the sale price of the houses based on their features, such as lot area, number of rooms, year built, and garage area.
+- Additionally, we will create a dashboard that allows Lydia to easily input property characteristics and receive price predictions, as well as explore the insights obtained from the analysis and model.
 
 ## Hypothesis and how to validate?
 
 1. Lot Size and Property Size Correlate with Price: Our first hypothesis is that both property size and lot size have a strong correlation with the sales price. Larger properties and lots are likely to be more valuable due to their potential use and space.
 
-2. Kitchen Quality Correlate with Value: We believe that houses with above-average kitchen quality will have a higher sales price.
+2. Kitchen Quality Correlates with Price: We hypothesize that houses with higher kitchen quality (rated as Excellent or Good) will have a higher sales price compared to houses with lower kitchen quality, as kitchen quality is often a major factor in buyer preference.
+
+3. Year Built Correlates with Price: We believe that houses built more recently will have a higher sales price compared to older houses. Newer construction is expected to have modern standards and less need for renovations, making them more attractive to buyers.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
