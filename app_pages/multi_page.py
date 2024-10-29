@@ -1,6 +1,5 @@
 '''
-This file and its contents have been informed and adapted 
-from the Churnometer Walkthrough Project 2.
+This file and its contents were inspired by and adapted from the Churnometer Walkthrough Project 2.
 '''
 
 import streamlit as st
