@@ -94,6 +94,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 3. Year Built Correlates with Price: We believe that houses built more recently will have a higher sales price compared to older houses. Newer construction is expected to have modern standards and less need for renovations, making them more attractive to buyers.
 
+4. We hypothesize that houses with larger garage areas are likely to have higher sales prices. A larger garage provides additional space for parking and storage, which can increase the overall attractiveness and value of the property.
+
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
