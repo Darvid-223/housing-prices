@@ -22,10 +22,10 @@ def page_hypothesis():
         f"* Year Built Correlates with Price: We believe that houses built more recently will "
         f"have a higher sales price compared to older houses. Newer construction is expected "
         f"to have modern standards and less need for renovations, making them more attractive "
-        f"to buyers."
+        f"to buyers.\n\n"
 
         f"* Garage Area Correlates with Price: Houses with larger garage areas are likely to "
         f"have higher sales prices, as a larger garage provides more space for parking and storage, "
-        f"which can increase the attractiveness of the property."
+        f"which can increase the attractiveness of the property.\n\n"
     )
 
