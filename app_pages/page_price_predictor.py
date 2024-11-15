@@ -20,20 +20,7 @@ def house_price_prediction_page():
     # Page header and client information
     st.write("### House Sale Price Prediction Interface")
     st.info(
-        f"* The client would like to predict the sale prices for their 4 inherited houses, "
-        f"as well as any other properties in Ames, Iowa."
-    )
-    st.write("---")
-
-    # Predict prices for inherited houses
-    st.write("### Inherited Properties Price Prediction")
-    st.info(
-        f"* Below are the details of the inherited houses and their individual price predictions."
-    )
-    total_price = predict_inherited_properties(price_pipeline, price_features)
-    total_price = "%.2f" % total_price
-    st.info(
-        f"The total estimated sale price for all inherited properties is: ${total_price}"
+        f"* The client would like to predict the sale prices for their inherited houses, "
     )
     st.write("---")
 
@@ -44,9 +31,21 @@ def house_price_prediction_page():
     )
     live_data = create_input_widgets()
 
+    
+    df = get_cleaned_data("default") 
+    
+    missing_columns = set(price_features) - set(live_data.columns)
+    for col in missing_columns:
+        if df[col].dtype == 'object':  
+            live_data[col] = df[col].mode()[0] 
+        else: 
+            live_data[col] = df[col].median()  
+
+
     if st.button("Run Prediction"):
         predicted_price = predict_sales_price(live_data, price_features, price_pipeline)
         st.info(f"The estimated sale price for the entered property is: ${predicted_price}")
+
 
 
 def predict_inherited_properties(pipeline, features):
