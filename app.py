@@ -9,6 +9,7 @@ from app_pages.multi_page import MultiPage
 from app_pages.page_summary import page_summary_body
 from app_pages.page_hypothesis import page_hypothesis
 #from app_pages.page_predict_sales_price import predict_sales_price
+from app_pages.page_sales_price_study import page_sales_price_study
 
 
 
@@ -19,6 +20,6 @@ app = MultiPage(app_name= "Housing Prices") # Create an instance of the app
 app.add_page("Project Summary", page_summary_body)
 app.add_page("Hypothesis", page_hypothesis)
 #app.add_page("House price prediction", page_predict_sales_price)
-
+app.add_page("House Price Study", page_sales_price_study)
 
 app.run()  # Run the app
