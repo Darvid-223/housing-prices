@@ -11,7 +11,7 @@ sns.set_style("whitegrid")
 def page_sales_price_study():
 
     # load data
-    df = load_telco_data()
+    df = get_raw_housing_data()
 
     # hard copied from churned customer study notebook from Churnometer Walkthrough Project 2
     corr_var_list = ['YearBuilt', 'GarageArea', 'GrLivArea', '1stFlrSF', 'OverallQual', 'TotalBsmtSF']
