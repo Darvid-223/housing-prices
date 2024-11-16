@@ -36,8 +36,9 @@ def regression_evaluation(features, target, model_pipeline):
     st.write(f"R2 Score: **{r2_score(target, predictions):.3f}**")
     st.write(f"Mean Absolute Error (MAE): **{mean_absolute_error(target, predictions):.3f}**")
     st.write(f"Mean Squared Error (MSE): **{mean_squared_error(target, predictions):.3f}**")
-    st.write(f"Root Mean Squared Error (RMSE): **{np.sqrt(mean_squared_error(
-        target, predictions)):.3f}**")
+    st.write(
+        f"Root Mean Squared Error (RMSE): **{np.sqrt(mean_squared_error(target, predictions)):.3f}**"
+    )
 
 
 def regression_evaluation_plots(data, model_pipeline, alpha_scatter=0.5):
