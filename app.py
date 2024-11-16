@@ -4,7 +4,6 @@ The code has been adapted and extended to analyze housing prices in Ames, Iowa, 
 predictive analytics and insights related to property attributes and sales price.
 '''
 
-import streamlit as st
 from app_pages.multi_page import MultiPage
 
 # Load page scripts
@@ -22,7 +21,7 @@ app.add_page("Project Summary", page_summary_body)  # Summary of the project
 app.add_page("Hypothesis", page_hypothesis)  # Hypothesis page
 app.add_page("House Price Study", page_sales_price_study)  # House price correlation study
 app.add_page("House Price Predictor", house_price_prediction_page)  # Price prediction page
-app.add_page("Pipeline Performance", page_predict_sales_price)  # Page for evaluating pipeline performance
+app.add_page("Pipeline Performance", page_predict_sales_price)  # evaluating pipeline performance
 
 # Run the app
 app.run()
