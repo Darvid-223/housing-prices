@@ -1,7 +1,14 @@
+"""
+This file and its contents were inspired by the Churnometer Walkthrough Project 2. 
+The code has been adapted and extended to analyze housing prices in Ames, Iowa, focusing on 
+predictive analytics and insights related to property attributes and sales price.
+"""
+
+import os
 import joblib
 import streamlit as st
 import pandas as pd
-import os
+
 
 @st.cache_data
 def get_raw_housing_data():
@@ -10,7 +17,8 @@ def get_raw_housing_data():
     Returns:
         pd.DataFrame: The raw housing dataset.
     '''
-    raw_data_path = os.path.join("inputs", "datasets", "raw", "house-price-20211124T154130Z-001", "house-price")
+    raw_data_path = os.path.join(
+        "inputs", "datasets", "raw", "house-price-20211124T154130Z-001", "house-price")
     raw_file = "house_prices_records.csv"
     try:
         housing_data = pd.read_csv(os.path.join(raw_data_path, raw_file))
