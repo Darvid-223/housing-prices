@@ -9,12 +9,26 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 def page_sales_price_study():
-
     # load data
     df = get_raw_housing_data()
 
     # hard copied from churned customer study notebook from Churnometer Walkthrough Project 2
     corr_var_list = ['YearBuilt', 'GarageArea', 'GrLivArea', '1stFlrSF', 'OverallQual', 'TotalBsmtSF']
+    variable_descriptions = {
+        'YearBuilt': 'Year the house was built',
+        'GarageArea': 'Garage area in square feet',
+        'GrLivArea': 'Above ground living area in square feet',
+        '1stFlrSF': 'First floor area in square feet',
+        'OverallQual': 'Overall material and finish quality',
+        'TotalBsmtSF': 'Total basement area in square feet',
+    }
+
+    # Format the correlation variable list with descriptions
+    formatted_corr_var_list = [
+        f"{var} ({variable_descriptions.get(var, 'No description available')})"
+        for var in corr_var_list
+    ]
+    corr_var_str = ", ".join(formatted_corr_var_list)
 
     st.write("### Sales Price Study")
     st.info(
@@ -28,8 +42,8 @@ def page_sales_price_study():
     if st.checkbox("Inspect House Price Data"):
         st.write(
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns, "
-            f"find below the first 10 rows.")
-
+            f"find below the first 10 rows."
+        )
         st.write(df.head(10))
 
     st.write("---")
@@ -38,8 +52,9 @@ def page_sales_price_study():
     st.write(
         f"* A correlation study was conducted in the notebook to better understand how "
         f"the variables are correlated to the sale price. \n"
-        f"The most correlated variables are: **{corr_var_list}**"
+        f"The most correlated variables are: **{corr_var_str}**"
     )
+
 
     # Based on "sales_price_study" notebook
     st.info(

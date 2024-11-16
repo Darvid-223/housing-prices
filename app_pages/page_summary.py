@@ -6,7 +6,6 @@ import streamlit as st
 
 def page_summary_body():
 
-    st.write("###Project Summary")
 
     # text based on README file - "Dataset Content" section
     st.info(
@@ -16,7 +15,8 @@ def page_summary_body():
         f"* Houses in this dataset were built between 1872 and 2010, allowing for an analysis of how various features influence housing prices over a long time span."
     )
 
-
+    st.write("---")
+    
     # Link to README file, so the users can have access to full project documentation
     st.write(
         f"* For additional information, please visit and **read** the "
