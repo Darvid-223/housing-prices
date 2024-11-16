@@ -1,5 +1,7 @@
 '''
-This file and its contents were inspired by and adapted from the Churnometer Walkthrough Project 2.
+This file and its contents were inspired by the Churnometer Walkthrough Project 2. 
+The code has been adapted and extended to analyze housing prices in Ames, Iowa, focusing on 
+predictive analytics and insights related to property attributes and sales price.
 '''
 
 import streamlit as st

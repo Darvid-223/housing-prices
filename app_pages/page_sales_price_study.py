@@ -1,19 +1,30 @@
-'''
-This file and its contents were inspired by and adapted from the Churnometer Walkthrough Project 2.
-'''
+"""
+This file and its contents were inspired by the Churnometer Walkthrough Project 2. 
+The code has been adapted and extended to analyze housing prices in Ames, Iowa, focusing on 
+predictive analytics and insights related to property attributes and sales price.
+"""
 
-import streamlit as st
-from src.data_management import get_raw_housing_data
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit as st
+from src.data_management import get_raw_housing_data
+
 sns.set_style("whitegrid")
 
+
 def page_sales_price_study():
-    # load data
+    """
+    Renders the sales price study page in the Streamlit app.
+    Displays correlations between sale price and key house attributes.
+    """
+    # Load data
     df = get_raw_housing_data()
 
-    # hard copied from churned customer study notebook from Churnometer Walkthrough Project 2
-    corr_var_list = ['YearBuilt', 'GarageArea', 'GrLivArea', '1stFlrSF', 'OverallQual', 'TotalBsmtSF']
+    # Correlation variable list and descriptions
+    corr_var_list = [
+        'YearBuilt', 'GarageArea', 'GrLivArea',
+        '1stFlrSF', 'OverallQual', 'TotalBsmtSF'
+    ]
     variable_descriptions = {
         'YearBuilt': 'Year the house was built',
         'GarageArea': 'Garage area in square feet',
@@ -23,67 +34,64 @@ def page_sales_price_study():
         'TotalBsmtSF': 'Total basement area in square feet',
     }
 
-    # Format the correlation variable list with descriptions
+    # Format variable descriptions
     formatted_corr_var_list = [
         f"{var} ({variable_descriptions.get(var, 'No description available')})"
         for var in corr_var_list
     ]
     corr_var_str = ", ".join(formatted_corr_var_list)
 
+    # Page header
     st.write("### Sales Price Study")
     st.info(
-        f"The client wants to know how the sale price correlates "
-        f"to certain house attributes. By understanding these correlations, "
-        f"the client aims to identify which features have the most "
-        f"significant impact on property value."
+        "The client wants to know how the sale price correlates to certain house attributes. "
+        "By understanding these correlations, the client aims to identify which features "
+        "have the most significant impact on property value."
     )
 
-    # inspect data
+    # Inspect data
     if st.checkbox("Inspect House Price Data"):
         st.write(
-            f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns, "
-            f"find below the first 10 rows."
+            f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns. "
+            "Below are the first 10 rows."
         )
         st.write(df.head(10))
 
     st.write("---")
 
-    # Correlation Study Summary
+    # Correlation study summary
     st.write(
-        f"* A correlation study was conducted in the notebook to better understand how "
-        f"the variables are correlated to the sale price. \n"
-        f"The most correlated variables are: **{corr_var_str}**"
+        "A correlation study was conducted to better understand how the variables are "
+        f"correlated to the sale price. The most correlated variables are: **{corr_var_str}**"
     )
 
-
-    # Based on "sales_price_study" notebook
     st.info(
-        f"* The following are the variables isolated in the correlation study:\n"
-        f"* Garage Area: Indicates that the size of the garage is a strong factor "
-        f"in determining a home’s value, likely due to the added utility and storage space it provides.\n"
-        f"* Above Ground Living Area (GrLivArea): Larger living areas above ground are highly valued, "
-        f"emphasizing the importance of spacious, functional living space.\n"
-        f"* Overall Quality (OverallQual): High-quality construction and materials are strongly associated "
-        f"with higher prices, reflecting buyer preference for well-built properties.\n"
-        f"* Total Basement Area (TotalBsmtSF): A larger basement area contributes to home value, "
-        f"potentially due to its flexibility for additional living or storage space.\n"
-        f"* First Floor Area (1stFlrSF): The size of the first floor is a key factor, "
-        f"as a larger main floor can improve layout and accessibility.\n"
-        f"* Year Built: Newer properties generally sell for more, as modern construction standards "
-        f"and newer materials are appealing to buyers."
+        "* Garage Area: Indicates that the size of the garage is a strong factor in determining "
+        "a home’s value, likely due to the added utility and storage space it provides.\n"
+        "* Above Ground Living Area (GrLivArea): Larger living areas above ground are "
+        "highly valued, emphasizing the importance of spacious, functional living space.\n"
+        "* Overall Quality (OverallQual): High-quality construction and materials are strongly w"
+        "associated with higher prices, reflecting buyer preference for well-built properties.\n"
+        "* Total Basement Area (TotalBsmtSF): A larger basement area contributes to home value, "
+        "potentially due to its flexibility for additional living or storage space.\n"
+        "* First Floor Area (1stFlrSF): The size of the first floor is a key factor, as a larger "
+        "main floor can improve layout and accessibility.\n"
+        "* Year Built: Newer properties generally sell for more, as modern construction standards "
+        "and newer materials are appealing to buyers."
     )
-
 
     # EDA of Correlated Variable List
     df_eda = df.filter(corr_var_list + ['SalePrice'])
 
     # Individual plots per variable
-    if st.checkbox("Variable correlation Sale Price"):
+    if st.checkbox("Variable correlation with Sale Price"):
         variable_correlation_to_sale_price(df_eda, corr_var_list)
 
 
 def variable_correlation_to_sale_price(df_eda, corr_var_list):
-    # function based on the "sale_price_study" notebook
+    """
+    Generates and displays correlation plots between variables and sale price.
+    """
     target_var = 'SalePrice'
     for col in corr_var_list:
         plot_numerical(df_eda, col, target_var)
@@ -91,8 +99,10 @@ def variable_correlation_to_sale_price(df_eda, corr_var_list):
 
 
 def plot_numerical(df, col, target_var):
-    # function based on the "sale_price_study" notebook
-    fig, axes = plt.subplots(figsize=(15, 8))
+    """
+    Creates and displays a regression plot for a numerical variable and the target variable.
+    """
+    fig, _ = plt.subplots(figsize=(15, 8))
     sns.regplot(data=df, x=col, y=target_var)
     plt.title(f"{col}", fontsize=20)
-    st.pyplot(fig)  # st.pyplot() renders image, in notebook is plt.show()
+    st.pyplot(fig)

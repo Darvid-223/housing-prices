@@ -148,8 +148,13 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 * The photos used on the home and sign-up page are from This Open Source site
 * The images used for the gallery page were taken from this other open-source site
 
-## Acknowledgements (optional)
+### Acknowledgements
 
-
-* In case you would like to thank the people that provided support through this project.
-
+- Special thanks to my friend Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
+- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project.
+This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
+- **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
+- **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
+- **Translations**: Provided translations for multilingual support in the documentation.
+- **Coding Advice**: Offered suggestions and advice on coding practices and problem-solving approaches.
+- **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
