@@ -64,4 +64,12 @@ def page_predict_sales_price():
     st.write("---")
     st.write("### Pipeline Performance")
     regression_performance(x_train, y_train, x_test, y_test, pipeline)
-    regression_evaluation_plots(x_train, y_train, x_test, y_test, pipeline)
+
+    # Prepare data for regression_evaluation_plots
+    data = {
+        "x_train": x_train,
+        "y_train": y_train,
+        "x_test": x_test,
+        "y_test": y_test
+    }
+    regression_evaluation_plots(data, pipeline)
