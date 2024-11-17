@@ -138,20 +138,63 @@ This file orchestrates the navigation and structure of the dashboard.
 
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
 
-## Deployment
+### Deployment
 
-### Heroku
+#### 1. **Deployment on Heroku**
 
-* The App live link is: <https://iowa-house-price-prediction-5717aa87801c.herokuapp.com//>
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+The project was deployed to Heroku, a cloud platform that simplifies application deployment. Below are the steps followed for deployment:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+1. **Prepare Project Files**:
+   - Ensure the following files are included in your project:
+     - `requirements.txt` - Lists all dependencies for the project.
+     - `Procfile` - Specifies how Heroku should run your application (e.g., `web: streamlit run app.py`).
+     - `runtime.txt` - Specifies the Python version used (e.g., `python-3.10.12`).
+
+2. **Create a Heroku Account and App**:
+   - Log in to [Heroku](https://heroku.com).
+   - Create a new app and provide it with a unique name.
+
+3. **Connect Heroku to GitHub**:
+   - Navigate to the **Deploy** tab in the Heroku dashboard.
+   - Select "GitHub" as the deployment method and link your GitHub account.
+   - Search for and select your project repository.
+
+4. **Deploy the App**:
+   - Choose the branch to deploy (usually `main`) and click "Deploy Branch."
+   - Wait for the process to complete and click "Open App" to view the deployed application.
+
+#### 2. **Running Locally**
+
+If you want to run the application locally instead of using Heroku:
+
+1. **Clone the Repository**:
+   - Clone the project from GitHub:
+     ```bash
+     git clone <repository-url>
+     ```
+
+2. **Install Dependencies**:
+   - Navigate to the project folder and activate a virtual environment:
+     ```bash
+     python -m venv env
+     source env/bin/activate  # On Windows: .\env\Scripts\activate
+     ```
+   - Install dependencies from `requirements.txt`:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+3. **Run the Application**:
+   - Start the Streamlit application:
+     ```bash
+     streamlit run app.py
+     ```
+
+4. **Open in Browser**:
+   - Open the local URL generated, typically `http://localhost:8501`.
+
+---
+
 
 ## Main Data Analysis and Machine Learning Libraries
 
