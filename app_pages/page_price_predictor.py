@@ -25,8 +25,18 @@ def house_price_prediction_page():
     # Page header and client information
     st.write("### House Sale Price Prediction Interface")
     st.info(
-        "* The client would like to predict the sale prices for their inherited houses."
+        "* The client would like to predict the sale prices for their inherited houses and any other house in Ames, Iowa."
     )
+    st.write("---")
+
+    # Predict inherited house prices
+    st.write("### Inherited House Price Prediction")
+    st.info(
+        "* Below are the details of the inherited houses and their individual price predictions."
+    )
+    total_price = predict_inherited_properties(price_pipeline, price_features)
+    total_price = f"{total_price:.2f}"  # Format to two decimal places
+    st.info(f"The total sale price for all inherited properties is: **${total_price}**")
     st.write("---")
 
     # Live price prediction
@@ -47,7 +57,7 @@ def house_price_prediction_page():
 
     if st.button("Run Prediction"):
         predicted_price = predict_sales_price(live_data, price_features, price_pipeline)
-        st.info(f"The estimated sale price for the entered property is: ${predicted_price}")
+        st.info(f"The estimated sale price for the entered property is: **${predicted_price}**")
 
 
 def predict_inherited_properties(pipeline, features):
@@ -59,10 +69,11 @@ def predict_inherited_properties(pipeline, features):
 
     for idx, row in inherited_data.iterrows():
         property_data = row.to_frame().T
+        st.write(f"### Inherited Property {idx + 1}")
         st.write(property_data)
         predicted_price = predict_sales_price(property_data, features, pipeline)
-        predicted_price = f"{predicted_price:.2f}"  # Convert to f-string
-        st.write(f"* Predicted sale price for property {idx + 1}: ${predicted_price}")
+        predicted_price = f"{predicted_price:.2f}"
+        st.write(f"* Predicted sale price for this property: **${predicted_price}**")
         total_price += float(predicted_price)
 
     return total_price

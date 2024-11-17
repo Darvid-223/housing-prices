@@ -21,7 +21,7 @@ app.add_page("Project Summary", page_summary_body)  # Summary of the project
 app.add_page("Hypothesis", page_hypothesis)  # Hypothesis page
 app.add_page("House Price Study", page_sales_price_study)  # House price correlation study
 app.add_page("House Price Predictor", house_price_prediction_page)  # Price prediction page
-app.add_page("Pipeline Performance", page_predict_sales_price)  # evaluating pipeline performance
+app.add_page("House Sales Price Prediction", page_predict_sales_price)  # evaluating pipeline performance
 
 # Run the app
 app.run()
