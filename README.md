@@ -11,7 +11,7 @@ The primary purpose of this project is to:
 
 ### Dataset Content
 
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data).
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
@@ -187,7 +187,7 @@ This structured approach ensured alignment between the project objectives, data 
 
 In this project, I did not create wireframes for the dashboard design. Instead, I used the [Churnometer](https://github.com/Code-Institute-Solutions/churnometer) walkthrough project by Code Institute as a template for structuring the dashboard.
 
-The Churnometer project provided a solid foundation with its user-friendly design and functional layout built using Streamlit. Streamlit is a standard library for creating interactive dashboards, and its use ensures a standardized and professional approach to designing web applications. By adapting the structure of the Churnometer project, I was able to maintain a clean, intuitive interface while focusing on implementing business-specific requirements and features for the Heritage Housing Issues project. This approach allowed me to deliver a functional and aesthetically pleasing dashboard efficiently.
+The Churnometer project provided a solid foundation with its user-friendly design and functional layout built using Streamlit. Streamlit is a standard library for creating interactive dashboards, and its use ensures a standardized and professional approach to designing web applications. By adapting the structure of the Churnometer project, I was able to maintain a clean, intuitive interface while focusing on implementing business-specific requirements and features for the Heritage Housing project. This approach allowed me to deliver a functional dashboard efficiently.
 
 The Streamlit dashboard consists of multiple pages, each designed to fulfill specific business requirements and provide a seamless user experience. Below is a detailed description of each page:
 
@@ -242,7 +242,11 @@ This file orchestrates the navigation and structure of the dashboard.
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+There are currently no known bugs in the application. 
+
+However, during development, there were challenges related to managing Python dependencies, particularly with installations from the `requirements.txt` file in certain environments. These issues were resolved by carefully managing the virtual environment setup and ensuring compatibility with the correct package versions. 
+
+Additionally, as the project heavily relies on machine learning libraries and Streamlit for deployment, users should ensure they are working in an environment compatible with these tools to avoid potential issues.
 
 ### Deployment
 
@@ -303,7 +307,132 @@ If you want to run the application locally instead of using Heroku:
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+Below is a list of the main libraries used in this project, along with examples of their usage:
+
+### Data Analysis and Visualization
+- **Pandas**
+  - Used for data cleaning, manipulation, and exploration.
+  - Example: Handled missing data and selected key features for the regression model.
+  ```python
+  df['LotFrontage'] = df['LotFrontage'].fillna(df['LotFrontage'].median())
+  key_features = df[['GrLivArea', 'GarageArea', 'YearBuilt', 'SalePrice']]
+  ```
+
+- **Matplotlib & Seaborn**
+  - Used for creating visualizations like scatter plots and heatmaps to understand relationships between variables.
+  - Example: Visualized correlations between features and sale price.
+  ```python
+  import seaborn as sns
+  import matplotlib.pyplot as plt
+
+  sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+  plt.title("Correlation Heatmap")
+  plt.show()
+  ```
+
+- **ydata-profiling**
+  - Used to create detailed profiling reports of the dataset to identify patterns and anomalies.
+  - Example: Generated a report to explore the dataset and detect missing values or unusual patterns.
+  ```python
+  from ydata_profiling import ProfileReport
+
+  profile = ProfileReport(df, title="Housing Data Profiling Report")
+  profile.to_file("housing_data_profile.html")
+  ```
+
+- **plotly**
+  - Used to create interactive visualizations on the dashboard.
+  - Example: Visualized the relationship between living area and sale price.
+  ```python
+  import plotly.express as px
+
+  fig = px.scatter(df, x="GrLivArea", y="SalePrice", title="Living Area vs Sale Price")
+  fig.show()
+  ```
+
+- **ppscore**
+  - Used to calculate predictive power scores between variables.
+  - Example: Evaluated how well a feature could predict the sale price.
+  ```python
+  import ppscore as pps
+
+  score = pps.score(df, "GrLivArea", "SalePrice")
+  print(score)
+  ```
+
+- **yellowbrick**
+  - Used to visualize model performance and evaluation metrics.
+  - Example: Displayed residual plots for regression model evaluation.
+  ```python
+  from yellowbrick.regressor import ResidualsPlot
+
+  visualizer = ResidualsPlot(pipeline['regressor'])
+  visualizer.fit(X_train, y_train)
+  visualizer.score(X_test, y_test)
+  visualizer.show()
+  ```
+
+### Machine Learning
+- **Scikit-learn**
+  - Used for creating and evaluating the regression pipeline.
+  - Example: Implemented a pipeline for feature scaling and model training.
+  ```python
+  from sklearn.pipeline import Pipeline
+  from sklearn.ensemble import RandomForestRegressor
+  from sklearn.preprocessing import StandardScaler
+
+  pipeline = Pipeline([
+      ('scaler', StandardScaler()),
+      ('regressor', RandomForestRegressor())
+  ])
+  pipeline.fit(X_train, y_train)
+  ```
+
+- **Feature-engine**
+  - Used for feature engineering, including imputation and transformation.
+  - Example: Replaced missing values and transformed skewed features.
+  ```python
+  from feature_engine.imputation import MeanMedianImputer
+
+  imputer = MeanMedianImputer(imputation_method='median', variables=['GarageYrBlt'])
+  df = imputer.fit_transform(df)
+  ```
+
+- **xgboost**
+  - Used as an alternative regression tool to optimize model performance.
+  - Example: Trained a gradient boosting regression model for predicting house prices.
+  ```python
+  import xgboost as xgb
+
+  model = xgb.XGBRegressor()
+  model.fit(X_train, y_train)
+  predictions = model.predict(X_test)
+  ```
+
+### Dashboard
+- **Streamlit**
+  - Used to build an interactive dashboard for visualizing insights and making predictions.
+  - Example: Created user input widgets for live predictions.
+  ```python
+  import streamlit as st
+
+  year_built = st.number_input("Year Built", min_value=1872, max_value=2010, value=2000)
+  prediction = pipeline.predict([[year_built, gr_liv_area, garage_area]])
+  st.write(f"Predicted Sale Price: ${prediction[0]:,.2f}")
+  ```
+
+### Miscellaneous
+- **Numpy**
+  - Used for numerical computations and array manipulations.
+  - Example: Applied transformations to numerical features for better model performance.
+  ```python
+  import numpy as np
+
+  df['log_LotArea'] = np.log(df['LotArea'])
+  ```
+
+
+These libraries collectively enabled effective data processing, model training, and visualization, making it possible to deliver insights and predictions that align with the project’s business requirements.
 
 ---
 
@@ -332,7 +461,7 @@ If you want to run the application locally instead of using Heroku:
 ## Acknowledgements
 
 - Special thanks to my friend Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
-- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project.
+- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming.
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
 - **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
@@ -340,3 +469,4 @@ This project was developed with the assistance of OpenAI's ChatGPT in the follow
 - **Coding Advice**: Offered suggestions and advice on coding practices and problem-solving approaches.
 - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
 - **Code Comments and Docstrings**: Helped in crafting clear and concise comments and docstrings to improve code readability and maintainability.
+- **README Structure and Language**: Assisted in organizing and refining the README file's structure and language to ensure clarity and professionalism.
