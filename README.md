@@ -106,8 +106,58 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+In this project, I did not create wireframes for the dashboard design. Instead, I used the [Churnometer](https://github.com/Code-Institute-Solutions/churnometer) walkthrough project by Code Institute as a template for structuring the dashboard.
+
+The Churnometer project provided a solid foundation with its user-friendly design and functional layout built using Streamlit. Streamlit is a standard library for creating interactive dashboards, and its use ensures a standardized and professional approach to designing web applications. By adapting the structure of the Churnometer project, I was able to maintain a clean, intuitive interface while focusing on implementing business-specific requirements and features for the Heritage Housing Issues project. This approach allowed me to deliver a functional and aesthetically pleasing dashboard efficiently.
+
+The Streamlit dashboard consists of multiple pages, each designed to fulfill specific business requirements and provide a seamless user experience. Below is a detailed description of each page:
+
+### 1. Hypothesis Page (`page_hypothesis.py`)
+This page presents the key hypotheses of the project and their expected impact on house prices. 
+- **Content:** 
+  - Four hypotheses are displayed, focusing on variables like lot size, kitchen quality, year built, and garage area.
+  - Information is presented using Streamlit's `st.success` to emphasize insights clearly.
+
+### 2. Predict Sales Price Page (`page_predict_sales_price.py`)
+This page provides an in-depth look into the machine learning pipeline used for house price prediction.
+- **Content:** 
+  - Visualizations of the pipeline's structure and feature importance.
+  - Performance metrics (e.g., R² score, RMSE) for the training and test datasets.
+  - Scatter plots comparing actual vs. predicted values for evaluation.
+- **Interactive Features:**
+  - Dynamic visualizations of feature importance and model predictions.
+
+### 3. Sales Price Study Page (`page_sales_price_study.py`)
+This page explores correlations between house attributes and sale prices to address the first business requirement.
+- **Content:**
+  - A correlation study for key variables like `GarageArea`, `GrLivArea`, `OverallQual`, etc.
+  - Detailed insights about how these features influence house prices.
+  - Regression plots showing the relationship between each variable and sale price.
+- **Interactive Features:**
+  - Checkboxes to inspect raw data and visualize specific correlations.
+
+### 4. Summary Page (`page_summary.py`)
+This page provides an overview of the project and its objectives, including dataset details and business requirements.
+- **Content:**
+  - Dataset description, including its source, key attributes, and time span.
+  - Links to additional project documentation, such as the README file.
+  - A summary of the two business requirements addressed in the project.
+
+### 5. Predict Price for Live Data (`page_price_predictor.py`)
+This page enables the user to input custom house data and predict its sale price using the regression model.
+- **Content:**
+  - Widgets for user input on key features such as `YearBuilt`, `GarageArea`, and `GrLivArea`.
+  - Dynamic table displaying the live input data in real-time.
+  - Predictions for both custom input and the client's inherited properties.
+- **Interactive Features:**
+  - Input widgets for live data.
+  - A button to trigger the prediction and display the results.
+
+### 6. Multi-Page Management (`multi_page.py`)
+This file orchestrates the navigation and structure of the dashboard.
+- **Content:**
+  - A sidebar with a menu to navigate between pages.
+  - Dynamic rendering of the selected page content.
 
 ## Unfixed Bugs
 

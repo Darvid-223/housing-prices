@@ -25,7 +25,8 @@ def house_price_prediction_page():
     # Page header and client information
     st.write("### House Sale Price Prediction Interface")
     st.info(
-        "* The client would like to predict the sale prices for their inherited houses and any other house in Ames, Iowa."
+        "* The client would like to predict the sale prices "
+        "for their inherited houses and any other house in Ames, Iowa."
     )
     st.write("---")
 
@@ -47,7 +48,7 @@ def house_price_prediction_page():
     live_data = create_input_widgets()
 
     # Show live data as a table
-    st.write("#### Current Input Data")
+    st.write("#### Live Data")
     st.table(live_data)
 
     # Fill missing columns with default values
