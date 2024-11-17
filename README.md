@@ -490,26 +490,22 @@ This project utilizes a variety of tools, libraries, and platforms to meet the r
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 ### Content
-
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
+- The project was inspired by and adapted from the [Churnometer Walkthrough Project](https://github.com/Code-Institute-Solutions/churnometer) provided by Code Institute.
+- The business requirements, CRISP-DM methodology, and dashboard structure were informed by the Code Institute course material and walkthrough projects.
+- Machine learning concepts and techniques were referenced from the [Scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html) and the [Feature-engine Documentation](https://feature-engine.trainindata.com/en/latest/).
+- Regression modeling and pipeline design were guided by resources from [Towards Data Science](https://towardsdatascience.com/) and [Kaggle Notebooks](https://www.kaggle.com/).
+- This README file is based on the [Code Institute's Template for the Heritage Housing Issues Project](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues).
+- Various YouTube videos on machine learning were used as supplementary resources to understand concepts and improve the project. 
 
 ---
 
 ## Acknowledgements
 
+- Special thanks to Code Institute for the comprehensive learning material and walkthrough projects that served as the foundation for this project.
 - Special thanks to my friend and former Code Institute student Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming.
+- Appreciation to my peers and the Slack community for answering questions and sharing resources.
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
 - **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
