@@ -1,46 +1,4 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into the cloud-based IDE with your GitHub account.
-
-3. On your Dashboard, click on the Create button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-11. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-12. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
+# Housing Prices
 
 ## Dataset Content
 
@@ -96,9 +54,26 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 4. We hypothesize that houses with larger garage areas are likely to have higher sales prices. A larger garage provides additional space for parking and storage, which can increase the overall attractiveness and value of the property.
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+## The Rationale to Map the Business Requirements to the Data Visualisations and ML Tasks
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+This project addresses two key business requirements, and the following rationale maps each requirement to the corresponding data visualizations and machine learning tasks implemented:
+
+### Business Requirement 1: Data Visualization and Correlation
+- **Goal:** Lydia wants to understand the key factors that influence house prices in Ames, Iowa.
+- **Approach:**
+  - Conduct exploratory data analysis (EDA) to identify features strongly correlated with sale price.
+  - Use **scatter plots** and **regression plots** to visualize relationships between numerical features (e.g., `GarageArea`, `GrLivArea`) and the sale price.
+  - Generate a **heatmap** to display the overall correlation matrix, highlighting features with the strongest positive or negative correlations to the sale price.
+  - Summarize findings in the **Sales Price Study** page.
+
+### Business Requirement 2: Price Prediction Using Machine Learning
+- **Goal:** Lydia needs a regression model to predict house prices for her inherited properties and other custom inputs.
+- **Approach:**
+  - Train a machine learning regression pipeline on cleaned and preprocessed housing data.
+  - Evaluate the pipeline using metrics such as **R² score** and **RMSE** to ensure its performance is reliable.
+  - Provide interactive predictions through the **Price Predictor** page, allowing users to input custom property details and receive estimated sale prices.
+  - Display **feature importance** from the machine learning model to enhance interpretability and show which features contributed most to the predictions.
+
 
 ## ML Business Case
 
