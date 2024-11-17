@@ -45,7 +45,7 @@ def page_predict_sales_price():
     # Display pipeline training summary
     st.info(
         "* The regression pipeline aims to predict house sale prices accurately.\n"
-        "* The pipeline achieved R² scores of 0.90 on the training set and 0.85 on the test set."
+        "* The pipeline achieved R² scores of 0.849 on the training set and 0.804 on the test set."
     )
 
     # Show pipeline structure

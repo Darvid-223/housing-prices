@@ -110,7 +110,7 @@ Lydia needs a machine learning model to accurately predict the sales prices of h
 - **Goal:** Build a regression model to estimate house prices.
 - **Tasks:**
   - Train a **regression pipeline** using cleaned and preprocessed housing data.
-  - Evaluate the pipeline with metrics like **R² score** and **RMSE** to ensure reliability.
+  - Evaluate the pipeline with metrics like **R² score** to ensure reliability.
   - Develop an interactive **Price Predictor** dashboard page:
     - Users input house details to receive live predictions.
     - Provide model-generated insights, such as **feature importance**, to enhance interpretability.
@@ -168,8 +168,8 @@ The project began with understanding the client's needs:
   - **R² Score:** Indicates how well the model explains variance in the sale price.
   - **Root Mean Squared Error (RMSE):** Measures prediction error magnitude.
 - Achieved R² scores:
-  - Training set: **0.90**
-  - Test set: **0.85**
+  - Training set: **0.849**
+  - Test set: **0.804**
 - Visualizations such as scatter plots of predicted vs. actual values were used to validate predictions.
 
 ### 6. Deployment
@@ -508,7 +508,7 @@ This project utilizes a variety of tools, libraries, and platforms to meet the r
 
 ## Acknowledgements
 
-- Special thanks to my friend Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
+- Special thanks to my friend and former Code Institute student Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming.
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
