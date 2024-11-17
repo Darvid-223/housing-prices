@@ -248,9 +248,9 @@ However, during development, there were challenges related to managing Python de
 
 Additionally, as the project heavily relies on machine learning libraries and Streamlit for deployment, users should ensure they are working in an environment compatible with these tools to avoid potential issues.
 
-### Deployment
+## Deployment
 
-#### 1. **Deployment on Heroku**
+### 1. **Deployment on Heroku**
 
 The project was deployed to Heroku, a cloud platform that simplifies application deployment. Below are the steps followed for deployment:
 
@@ -273,7 +273,7 @@ The project was deployed to Heroku, a cloud platform that simplifies application
    - Choose the branch to deploy (usually `main`) and click "Deploy Branch."
    - Wait for the process to complete and click "Open App" to view the deployed application.
 
-#### 2. **Running Locally**
+### 2. **Running Locally**
 
 If you want to run the application locally instead of using Heroku:
 
@@ -431,27 +431,75 @@ Below is a list of the main libraries used in this project, along with examples 
   df['log_LotArea'] = np.log(df['LotArea'])
   ```
 
-
 These libraries collectively enabled effective data processing, model training, and visualization, making it possible to deliver insights and predictions that align with the project’s business requirements.
 
 ---
+
+## Technologies Used
+
+This project utilizes a variety of tools, libraries, and platforms to meet the requirements and deliver a functional, user-friendly application. Below is a categorized list of technologies used:
+
+### Programming Languages
+- **Python**: The primary programming language used for data cleaning, machine learning, and backend development.
+
+### Libraries and Frameworks
+- **Streamlit**: Used for building the interactive dashboard and deploying the web app.
+- **Scikit-learn**: For building and evaluating the regression pipeline.
+- **XGBoost**: Leveraged for advanced regression modeling.
+- **Feature-engine**: Used for feature engineering and preprocessing steps.
+- **Pandas & NumPy**: Core libraries for data manipulation and analysis.
+- **Matplotlib & Seaborn**: Used for creating static visualizations.
+- **Plotly**: Integrated for interactive visualizations.
+- **Yellowbrick**: Helped visualize model evaluation metrics.
+
+### Data Profiling
+- **ydata-profiling**: Provided detailed insights into the dataset for exploratory analysis.
+
+### Data Processing and Validation
+- **PPScore**: Used to compute predictive power scores for variable selection.
+- **Imbalanced-learn**: Assisted with handling imbalanced datasets.
+
+### Deployment and Hosting
+- **Heroku**: Platform used to deploy the dashboard app for public access.
+- **GitHub**: For version control and hosting the project repository.
+
+### Tools and Environments
+- **Jupyter Notebooks**: Used for data cleaning, exploratory analysis, and model experimentation.
+- **Git**: Version control system to track changes and collaborate.
+- **Gitpod**: Cloud-based development environment used for coding.
+- **Markdown**: For documenting the README file and other project descriptions.
+
+### Visualization Tools
+- **Altair**: For additional data visualizations.
+- **PPS**: Visualized predictive relationships between variables.
+
+### Code Quality and Linting
+- **Pylint**: Used to ensure code adheres to Python coding standards (PEP8) and to identify potential issues.
+  - Example: Checking for unused imports, improper indentation, and missing docstrings.
+  ```bash
+  pylint app_pages/
+  ```
+  - Example of Pylint Output:
+  ```bash
+  ************* Module app_pages.page_summary
+  app_pages/page_summary.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+  app_pages/page_summary.py:10:4: C0103: Variable name "df" doesn't conform to snake_case naming style (invalid-name)
+  ```
+
+--- 
 
 ## Credits
 
 * In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
 * You can break the credits section up into Content and Media, depending on what you have included in your project.
 
----
-
-## Content
+### Content
 
 * The text for the Home page was taken from Wikipedia Article A
 * Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
----
-
-## Media
+### Media
 
 * The photos used on the home and sign-up page are from This Open Source site
 * The images used for the gallery page were taken from this other open-source site
