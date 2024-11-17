@@ -1,6 +1,6 @@
 """
-This file and its contents were inspired by the Churnometer Walkthrough Project 2.
-The code has been adapted and extended to analyze housing prices in Ames, Iowa, focusing on
+This file and its contents were inspired by the Churnometer Walkthrough Project 2. 
+The code has been adapted and extended to analyze housing prices in Ames, Iowa, focusing on 
 predictive analytics and insights related to property attributes and sales price.
 """
 
@@ -29,27 +29,28 @@ def house_price_prediction_page():
     )
     st.write("---")
 
-    # Display inherited properties predictions
-    st.write("### Inherited Houses Price Prediction")
-    st.info(
-        "* Below are the details of the inherited houses and their respective predicted prices."
-    )
-    total_price = predict_inherited_properties(price_pipeline, price_features)
-    st.info(f"The total predicted sale price for all inherited houses is: **${total_price}**")
-    st.write("---")
-
     # Live price prediction
     st.write("### Live Price Predictor")
     st.info(
         "* Input the details of a property below to predict its sale price."
     )
+    live_data = create_input_widgets()
 
-    live_data = create_input_widgets_with_live_table()
+    # Fill missing columns with default values
+    df = get_cleaned_data("default")
+    missing_columns = set(price_features) - set(live_data.columns)
+    for col in missing_columns:
+        if df[col].dtype == 'object':
+            live_data[col] = df[col].mode()[0]
+        else:
+            live_data[col] = df[col].median()
 
-    # Prediction button
+    st.write("### Input Summary")
+    st.dataframe(live_data)
+
     if st.button("Run Prediction"):
         predicted_price = predict_sales_price(live_data, price_features, price_pipeline)
-        st.info(f"The estimated sale price for the entered property is: **${predicted_price}**")
+        st.info(f"The estimated sale price for the entered property is: ${predicted_price}")
 
 
 def predict_inherited_properties(pipeline, features):
@@ -64,15 +65,15 @@ def predict_inherited_properties(pipeline, features):
         st.write(property_data)
         predicted_price = predict_sales_price(property_data, features, pipeline)
         predicted_price = f"{predicted_price:.2f}"  # Convert to f-string
-        st.write(f"* Predicted sale price for property {idx + 1}: **${predicted_price}**")
+        st.write(f"* Predicted sale price for property {idx + 1}: ${predicted_price}")
         total_price += float(predicted_price)
 
-    return f"{total_price:.2f}"
+    return total_price
 
 
-def create_input_widgets_with_live_table():
+def create_input_widgets():
     """
-    Creates input widgets for live prediction of house prices and displays a live table.
+    Creates input widgets for live prediction of house prices.
     Returns a DataFrame containing the input values.
     """
     # Load the dataset for default values
@@ -80,49 +81,28 @@ def create_input_widgets_with_live_table():
     scaling_min, scaling_max = 0.4, 2.0
 
     # Create input widgets for key features
-    col1, col2 = st.columns(2)
-    col3, col4 = st.columns(2)
-
     live_data = pd.DataFrame([], index=[0])
 
-    with col1:
-        feature = "1stFlrSF"
-        live_data[feature] = st.number_input(
-            label=f"{feature} (sq ft)",
-            min_value=df[feature].min() * scaling_min,
-            max_value=df[feature].max() * scaling_max,
-            value=df[feature].median()
-        )
+    features = [
+        "1stFlrSF", "GrLivArea", "GarageArea", "YearBuilt",
+        "OverallQual", "KitchenQual", "OverallCond", "BsmtExposure",
+        "2ndFlrSF", "LotArea", "LotFrontage", "GarageYrBlt",
+        "YearRemodAdd", "BsmtUnfSF", "OpenPorchSF", "BedroomAbvGr",
+        "GarageFinish", "MasVnrArea", "TotalBsmtSF", "BsmtFinType1",
+        "BsmtFinSF1"
+    ]
 
-    with col2:
-        feature = "GrLivArea"
-        live_data[feature] = st.number_input(
-            label=f"{feature} (sq ft)",
-            min_value=df[feature].min() * scaling_min,
-            max_value=df[feature].max() * scaling_max,
-            value=df[feature].median()
-        )
-
-    with col3:
-        feature = "GarageArea"
-        live_data[feature] = st.number_input(
-            label=f"{feature} (sq ft)",
-            min_value=df[feature].min() * scaling_min,
-            max_value=df[feature].max() * scaling_max,
-            value=df[feature].median()
-        )
-
-    with col4:
-        feature = "YearBuilt"
-        live_data[feature] = st.number_input(
-            label=f"{feature}",
-            min_value=int(df[feature].min()),
-            max_value=int(df[feature].max()),
-            value=int(df[feature].median())
-        )
-
-    # Display the live table
-    st.write("### Live Data Table")
-    st.table(live_data)
-
+    for feature in features:
+        if feature in df.columns:
+            if df[feature].dtype == 'object':
+                live_data[feature] = st.selectbox(
+                    f"{feature}", options=df[feature].unique()
+                )
+            else:
+                live_data[feature] = st.number_input(
+                    label=f"{feature}",
+                    min_value=df[feature].min() * scaling_min,
+                    max_value=df[feature].max() * scaling_max,
+                    value=df[feature].median()
+                )
     return live_data

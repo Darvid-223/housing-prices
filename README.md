@@ -158,3 +158,4 @@ This project was developed with the assistance of OpenAI's ChatGPT in the follow
 - **Translations**: Provided translations for multilingual support in the documentation.
 - **Coding Advice**: Offered suggestions and advice on coding practices and problem-solving approaches.
 - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
+- **Code Comments and Docstrings**: Helped in crafting clear and concise comments and docstrings to improve code readability and maintainability.
