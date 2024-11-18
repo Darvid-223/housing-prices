@@ -254,6 +254,8 @@ This page presents the key hypotheses of the project and their expected impact o
   - Four hypotheses are displayed, focusing on variables like lot size, kitchen quality, year built, and garage area.
   - Information is presented using Streamlit's `st.success` to emphasize insights clearly.
 
+![Hypothesis Page](static/images/Hypotes.png)
+
 ### 2. Predict Sales Price Page (`page_predict_sales_price.py`)
 This page provides an in-depth look into the machine learning pipeline used for house price prediction.
 - **Content:** 
@@ -262,6 +264,8 @@ This page provides an in-depth look into the machine learning pipeline used for 
   - Scatter plots comparing actual vs. predicted values for evaluation.
 - **Interactive Features:**
   - Dynamic visualizations of feature importance and model predictions.
+
+![Model Page](static/images/Model.png)
 
 ### 3. Sales Price Study Page (`page_sales_price_study.py`)
 This page explores correlations between house attributes and sale prices to address the first business requirement.
@@ -272,12 +276,16 @@ This page explores correlations between house attributes and sale prices to addr
 - **Interactive Features:**
   - Checkboxes to inspect raw data and visualize specific correlations.
 
+![Study Page](static/images/Study.png)
+
 ### 4. Summary Page (`page_summary.py`)
 This page provides an overview of the project and its objectives, including dataset details and business requirements.
 - **Content:**
   - Dataset description, including its source, key attributes, and time span.
   - Links to additional project documentation, such as the README file.
   - A summary of the two business requirements addressed in the project.
+
+![Summary Page](static/images/Summary.png)
 
 ### 5. Predict Price for Live Data (`page_price_predictor.py`)
 This page enables the user to input custom house data and predict its sale price using the regression model.
@@ -288,6 +296,8 @@ This page enables the user to input custom house data and predict its sale price
 - **Interactive Features:**
   - Input widgets for live data.
   - A button to trigger the prediction and display the results.
+
+![Predictor Page](static/images/Predictor.png)
 
 ### 6. Multi-Page Management (`multi_page.py`)
 This file orchestrates the navigation and structure of the dashboard.
