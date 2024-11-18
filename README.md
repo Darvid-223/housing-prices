@@ -1,6 +1,61 @@
 # Housing Prices
 
-Visit live site [here](https://iowa-house-price-prediction-5717aa87801c.herokuapp.com/).
+Visit live site ![here](https://iowa-house-price-prediction-5717aa87801c.herokuapp.com/).
+
+![Am I Responsive Screenshot](static\images\amiresponsive.png)
+
+- [Housing Prices](#housing-prices)
+  * [Introduction & Overview](#introduction---overview)
+    + [Purpose](#purpose)
+    + [Dataset Content](#dataset-content)
+      - [Key Features of the Dataset:](#key-features-of-the-dataset-)
+  * [Business Requirements](#business-requirements)
+    + [Business Requirement 1: Data Visualization and Correlation](#business-requirement-1--data-visualization-and-correlation)
+    + [Business Requirement 2: Price Prediction Using Machine Learning](#business-requirement-2--price-prediction-using-machine-learning)
+  * [Hypotheses and Validation](#hypotheses-and-validation)
+  * [Rationale for Mapping Business Requirements to Tasks](#rationale-for-mapping-business-requirements-to-tasks)
+    + [Business Requirement 1: Data Visualization and Correlation](#business-requirement-1--data-visualization-and-correlation-1)
+    + [Business Requirement 2: Price Prediction Using Machine Learning](#business-requirement-2--price-prediction-using-machine-learning-1)
+  * [ML Business Case](#ml-business-case)
+    + [Predicting Sale Prices](#predicting-sale-prices)
+  * [CRISP-DM Methodology](#crisp-dm-methodology)
+    + [1. Business Understanding](#1-business-understanding)
+    + [2. Data Understanding](#2-data-understanding)
+    + [3. Data Preparation](#3-data-preparation)
+    + [4. Modeling](#4-modeling)
+    + [5. Evaluation](#5-evaluation)
+    + [6. Deployment](#6-deployment)
+  * [Dashboard Design](#dashboard-design)
+    + [1. Hypothesis Page (`page_hypothesis.py`)](#1-hypothesis-page---page-hypothesispy--)
+    + [2. Predict Sales Price Page (`page_predict_sales_price.py`)](#2-predict-sales-price-page---page-predict-sales-pricepy--)
+    + [3. Sales Price Study Page (`page_sales_price_study.py`)](#3-sales-price-study-page---page-sales-price-studypy--)
+    + [4. Summary Page (`page_summary.py`)](#4-summary-page---page-summarypy--)
+    + [5. Predict Price for Live Data (`page_price_predictor.py`)](#5-predict-price-for-live-data---page-price-predictorpy--)
+    + [6. Multi-Page Management (`multi_page.py`)](#6-multi-page-management---multi-pagepy--)
+  * [Unfixed Bugs](#unfixed-bugs)
+  * [Deployment](#deployment)
+    + [1. **Deployment on Heroku**](#1---deployment-on-heroku--)
+    + [2. **Running Locally**](#2---running-locally--)
+  * [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+    + [Data Analysis and Visualization](#data-analysis-and-visualization)
+    + [Machine Learning](#machine-learning)
+    + [Dashboard](#dashboard)
+    + [Miscellaneous](#miscellaneous)
+  * [Technologies Used](#technologies-used)
+    + [Programming Languages](#programming-languages)
+    + [Libraries and Frameworks](#libraries-and-frameworks)
+    + [Data Profiling](#data-profiling)
+    + [Data Processing and Validation](#data-processing-and-validation)
+    + [Deployment and Hosting](#deployment-and-hosting)
+    + [Tools and Environments](#tools-and-environments)
+    + [Visualization Tools](#visualization-tools)
+    + [Code Quality and Linting](#code-quality-and-linting)
+  * [Credits](#credits)
+    + [Content](#content)
+  * [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Introduction & Overview
 
