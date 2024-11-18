@@ -1,8 +1,8 @@
 # Housing Prices
 
-Visit live site ![here](https://iowa-house-price-prediction-5717aa87801c.herokuapp.com/).
+Visit live site [here](https://iowa-house-price-prediction-5717aa87801c.herokuapp.com/).
 
-![Am I Responsive Screenshot](static\images\amiresponsive.png)
+![Am I Responsive Screenshot](static/images/amiresponsive.png)
 
 - [Housing Prices](#housing-prices)
   * [Introduction & Overview](#introduction---overview)
