@@ -1,5 +1,7 @@
 # Housing Prices
 
+Visit live site [here](https://iowa-house-price-prediction-5717aa87801c.herokuapp.com/).
+
 ## Introduction & Overview
 
 This project, **Housing Prices**, is designed to analyze housing data from Ames, Iowa, and provide insights into the key factors that influence house prices. The goal is to assist the client, Lydia, in making informed decisions about selling her inherited properties by leveraging data visualizations and predictive analytics.
@@ -280,7 +282,7 @@ If you want to run the application locally instead of using Heroku:
 1. **Clone the Repository**:
    - Clone the project from GitHub:
      ```bash
-     git clone <repository-url>
+     git clone https://github.com/Darvid-223/housing-prices
      ```
 
 2. **Install Dependencies**:
@@ -507,10 +509,10 @@ This project utilizes a variety of tools, libraries, and platforms to meet the r
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming.
 - Appreciation to my peers and the Slack community for answering questions and sharing resources.
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
-- **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
-- **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
-- **Translations**: Provided translations for multilingual support in the documentation.
-- **Coding Advice**: Offered suggestions and advice on coding practices and problem-solving approaches.
-- **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
-- **Code Comments and Docstrings**: Helped in crafting clear and concise comments and docstrings to improve code readability and maintainability.
-- **README Structure and Language**: Assisted in organizing and refining the README file's structure and language to ensure clarity and professionalism.
+  - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
+  - **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
+  - **Translations**: Provided translations for multilingual support in the documentation.
+  - **Coding Advice**: Offered suggestions and advice on coding practices and problem-solving approaches.
+  - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
+  - **Code Comments and Docstrings**: Helped in crafting clear and concise comments and docstrings to improve code readability and maintainability.
+  - **README Structure and Language**: Assisted in organizing and refining the README file's structure and language to ensure clarity and professionalism.
