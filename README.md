@@ -54,9 +54,6 @@ Visit live site [here](https://iowa-house-price-prediction-5717aa87801c.herokuap
     + [Content](#content)
   * [Acknowledgements](#acknowledgements)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 ## Introduction & Overview
 
 This project, **Housing Prices**, is designed to analyze housing data from Ames, Iowa, and provide insights into the key factors that influence house prices. The goal is to assist the client, Lydia, in making informed decisions about selling her inherited properties by leveraging data visualizations and predictive analytics.
@@ -254,7 +251,7 @@ This page presents the key hypotheses of the project and their expected impact o
   - Four hypotheses are displayed, focusing on variables like lot size, kitchen quality, year built, and garage area.
   - Information is presented using Streamlit's `st.success` to emphasize insights clearly.
 
-![Hypothesis Page](static/images/Hypotes.png)
+![Screenshot of the Hypothesis Page](static/images/Hypotes.png)
 
 ### 2. Predict Sales Price Page (`page_predict_sales_price.py`)
 This page provides an in-depth look into the machine learning pipeline used for house price prediction.
@@ -265,7 +262,7 @@ This page provides an in-depth look into the machine learning pipeline used for 
 - **Interactive Features:**
   - Dynamic visualizations of feature importance and model predictions.
 
-![Model Page](static/images/Model.png)
+![Screenshot of the ML Model Page](static/images/Model.png)
 
 ### 3. Sales Price Study Page (`page_sales_price_study.py`)
 This page explores correlations between house attributes and sale prices to address the first business requirement.
@@ -276,7 +273,7 @@ This page explores correlations between house attributes and sale prices to addr
 - **Interactive Features:**
   - Checkboxes to inspect raw data and visualize specific correlations.
 
-![Study Page](static/images/Study.png)
+![Screenshot of the Sales Price Study Page](static/images/Study.png)
 
 ### 4. Summary Page (`page_summary.py`)
 This page provides an overview of the project and its objectives, including dataset details and business requirements.
@@ -285,7 +282,7 @@ This page provides an overview of the project and its objectives, including data
   - Links to additional project documentation, such as the README file.
   - A summary of the two business requirements addressed in the project.
 
-![Summary Page](static/images/Summary.png)
+![Screenshot of the Summary Page](static/images/Summary.png)
 
 ### 5. Predict Price for Live Data (`page_price_predictor.py`)
 This page enables the user to input custom house data and predict its sale price using the regression model.
@@ -297,7 +294,7 @@ This page enables the user to input custom house data and predict its sale price
   - Input widgets for live data.
   - A button to trigger the prediction and display the results.
 
-![Predictor Page](static/images/Predictor.png)
+![Screenshot of the Predictor Page](static/images/Predictor.png)
 
 ### 6. Multi-Page Management (`multi_page.py`)
 This file orchestrates the navigation and structure of the dashboard.
@@ -574,7 +571,7 @@ This project utilizes a variety of tools, libraries, and platforms to meet the r
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming.
 - Special thanks you to **Sheryl Goldberg**, who mentored me during my previous projects.
 - Appreciation to my peers and the Slack community for answering questions and sharing resources.
-- I would like to acknowledge the work of previous Code Institute students, whose projects, including [Vanessa's Heritage Housing Issues project](https://github.com/van-essa/heritage-housing-issues) and [PP5 Predictive Analysis project by Vasi012](https://github.com/Vasi012/PP5-Predictive-Analysis), provided valuable insights and ideas. These projects served as occasional references for solving specific challenges and understanding how others approached similar problems. While this project is unique, the inspiration and guidance from past student work have been greatly appreciated.
+- I would like to acknowledge the work of previous Code Institute students, including Vanessa and Vasi012, whose projects provided valuable insights and ideas. These projects served as occasional references for solving specific challenges and understanding how others approached similar problems. While this project is unique, the inspiration and guidance from past student work have been greatly appreciated.
 - This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
   - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
   - **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
