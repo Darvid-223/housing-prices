@@ -570,10 +570,12 @@ This project utilizes a variety of tools, libraries, and platforms to meet the r
 ## Acknowledgements
 
 - Special thanks to Code Institute for the comprehensive learning material and walkthrough projects that served as the foundation for this project.
-- Special thanks to my friend and former Code Institute student Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
+- Special thanks to my friend and former Code Institute student **Lucas Behrendt**, whose feedback and tips from his experience in the same course were immensely helpful.
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming.
+- Special thanks you to **Sheryl Goldberg**, who mentored me during my previous projects.
 - Appreciation to my peers and the Slack community for answering questions and sharing resources.
-This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
+- I would like to acknowledge the work of previous Code Institute students, whose projects, including [Vanessa's Heritage Housing Issues project](https://github.com/van-essa/heritage-housing-issues) and [PP5 Predictive Analysis project by Vasi012](https://github.com/Vasi012/PP5-Predictive-Analysis), provided valuable insights and ideas. These projects served as occasional references for solving specific challenges and understanding how others approached similar problems. While this project is unique, the inspiration and guidance from past student work have been greatly appreciated.
+- This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
   - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
   - **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
   - **Translations**: Provided translations for multilingual support in the documentation.
@@ -581,3 +583,4 @@ This project was developed with the assistance of OpenAI's ChatGPT in the follow
   - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
   - **Code Comments and Docstrings**: Helped in crafting clear and concise comments and docstrings to improve code readability and maintainability.
   - **README Structure and Language**: Assisted in organizing and refining the README file's structure and language to ensure clarity and professionalism.
+
